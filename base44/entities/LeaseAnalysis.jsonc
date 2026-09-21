@@ -1,0 +1,72 @@
+{
+  "name": "LeaseAnalysis",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "overall_risk_score": {
+      "type": "number"
+    },
+    "jurisdiction": {
+      "type": "string"
+    },
+    "lease_type": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "clauses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "clause_text": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "risk_level": {
+            "type": "string"
+          },
+          "plain_language": {
+            "type": "string"
+          },
+          "why_it_matters": {
+            "type": "string"
+          },
+          "legal_mapping": {
+            "type": "string"
+          },
+          "recommendation": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "file_url": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "overall_risk_score",
+    "jurisdiction"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
